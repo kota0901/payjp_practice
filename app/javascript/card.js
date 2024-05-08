@@ -12,7 +12,14 @@ const pay = () => {
 
   const form = document.getElementById('charge-form')
   form.addEventListener("submit", (e) => {
-    console.log("フォーム送信時にイベント発火")
+    //then以降はトークンを受け取った後の処理
+    payjp.createToken(numberElement).then(function (response) {
+      if (response.error) {
+      } else {
+        const token = response.id;
+        console.log(token)
+      }
+    });
     e.preventDefault();
   });
 };
