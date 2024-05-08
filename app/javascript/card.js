@@ -1,5 +1,6 @@
 const pay = () => {
-  const payjp = Payjp('pk_test_fbe345fadabdaac05a6dc0a9')
+  const publicKey = gon.public_key
+  const payjp = Payjp(publicKey)
   //「elementsメソッド」：フォームを生成するためのcreate()メソッドを使える。このメソッドは入力フォームを作成できる。
   const elements = payjp.elements();
   const numberElement = elements.create('cardNumber');
