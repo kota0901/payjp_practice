@@ -1,0 +1,13 @@
+<%#学習用コメント：
+「model.errors」：エラーオブジェクトです。モデルの属性がバリデーションを通過できなかった場合、エラーの詳細がこのオブジェクトに格納する
+「.any?」：コレクション（リストや配列など）に少なくとも一つの要素が存在するかどうかを確認する。ここでは、model.errors にエラーメッセージが一つでも存在するかをチェック
+%>
+<% if model.errors.any? %>
+  <div class="error-alert">
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li class='error-message'><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
