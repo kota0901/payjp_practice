@@ -24,7 +24,9 @@ const pay = () => {
       numberElement.clear();
       expiryElement.clear();
       cvcElement.clear();
+      document.getElementById("charge-form").submit();
     });
+    //以下記述によりサーバーサイドへの送信を止めているが、前述の「document.getElementById("charge-form").submit();」によりサーバーサイドへフォーム情報が送信される
     e.preventDefault();
   });
 };
